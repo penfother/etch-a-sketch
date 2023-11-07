@@ -1,4 +1,4 @@
-//creates a table of divs with defined number of rows and columns
+ //creates a table of divs with defined number of rows and columns
 function setTable(numberOfRows, numberOfColumns, tableDOM) {
 
     //generates usable rows for table
@@ -7,14 +7,13 @@ function setTable(numberOfRows, numberOfColumns, tableDOM) {
         let generateRow = [];
         let rowStorage = document.createElement("div");
         tableDOM.appendChild(rowStorage);
-        rowStorage.setAttribute("class", "row" + o);
+        rowStorage.setAttribute("class", "row" + o + " " + "row");
         for (let i = 1; i < numberOfColumns + 1; i++) {
             let storage;
             storage = document.createElement("div");
-            storage.setAttribute("class", "row" + o + " " + "column" + i);
+            storage.setAttribute("class", "column" + i + " " + "column");
             rowStorage.appendChild(storage)
             generateRow["column" + i]= storage;
-
         };
         table["row" + o] = generateRow;    
     };
@@ -22,5 +21,6 @@ function setTable(numberOfRows, numberOfColumns, tableDOM) {
 };
 
 const tableSpread = document.body.appendChild(document.createElement("div"));
-tableSpread.id = "tableSpread";
-console.log(setTable(4,4, tableSpread));
+tableSpread.setAttribute("class", "tableSpread")
+
+setTable(4,4, tableSpread);
