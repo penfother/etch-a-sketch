@@ -1,0 +1,22 @@
+body {
+    display: block;
+}
+
+.tableSpread {
+    display: block;
+}
+
+.row {
+    display: block;
+    height: 50px;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+}
+
+.column {
+    height: 50px;
+    border-color: black;
+    border:2px;
+    border-style: solid;
+}
