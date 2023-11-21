@@ -14,18 +14,14 @@ body {
     display: flex;
     align-items: stretch;
     flex-direction: row;
-    border-style: solid;
     flex-grow:1;
 }
 
-.column {
+
+.square {
+    width: auto;
+    height: auto;
     display: flex;
     align-items: stretch;
     flex-grow:1;
-    border-style:solid;
-}
-
-.square {
-    width:auto;
-    height:auto;
 }

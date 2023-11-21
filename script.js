@@ -12,7 +12,9 @@ function setTable(numberOfRows, numberOfColumns, tableDOM) {
         for (let i = 1; i < numberOfColumns + 1; i++) {
             let storage;
             storage = document.createElement("div");
-            storage.setAttribute("class", "column" + i + " " + "column" + " " + "square" + c + " " + "square");
+            storage.setAttribute("class", "column" + i + " " + "column");
+            storage.setAttribute("class", "square");
+            storage.setAttribute("id", "square" + c);
             c++;
             rowStorage.appendChild(storage)
             generateRow["column" + i]= storage;
@@ -23,10 +25,20 @@ function setTable(numberOfRows, numberOfColumns, tableDOM) {
 };
 
 const tableSpread = document.body.appendChild(document.createElement("div"));
-tableSpread.setAttribute("class", "tableSpread")
+tableSpread.setAttribute("class", "tableSpread");
 
-setTable(4,4, tableSpread);
+let a=100;
 
-column.addEventListener("mouseover", {
+setTable(a,a, tableSpread);
 
-})
+function changeColor(item) {
+    item.style.backgroundColor = "blue";
+};
+
+let squares = document.querySelectorAll(".square");
+
+squares.forEach((square) => {
+    square.addEventListener("mouseover", ()=> {
+        square.style.backgroundColor = "blue";
+    });
+});
