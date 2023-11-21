@@ -3,20 +3,29 @@ body {
 }
 
 .tableSpread {
-    display: block;
+    display: flex;
+    height: 500px;
+    width: 500px;
+    border-style: solid;
+    flex-direction: column;
 }
 
 .row {
-    display: block;
-    height: 50px;
-    border-color: black;
-    border: 2px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
     border-style: solid;
+    flex-grow:1;
 }
 
 .column {
-    height: 50px;
-    border-color: black;
-    border:2px;
-    border-style: solid;
+    display: flex;
+    align-items: stretch;
+    flex-grow:1;
+    border-style:solid;
+}
+
+.square {
+    width:auto;
+    height:auto;
 }
