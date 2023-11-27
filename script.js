@@ -1,7 +1,6 @@
+ //refactor this
  //creates a table of divs with defined number of rows and columns
 function setTable(numberOfRows, numberOfColumns, tableDOM) {
-
-    //generates usable rows for table
     let table = [];
     let c=1;
     for (let o = 1; o < numberOfRows + 1; o++) {
@@ -32,13 +31,16 @@ let a=100;
 setTable(a,a, tableSpread);
 
 function changeColor(item) {
-    item.style.backgroundColor = "blue";
+    let randomColor=Math.floor(Math.random()*16777215).toString(16);
+    return "#" + randomColor;
 };
 
 let squares = document.querySelectorAll(".square");
 
 squares.forEach((square) => {
     square.addEventListener("mouseover", ()=> {
-        square.style.backgroundColor = "blue";
+        square.style.backgroundColor = changeColor();
     });
 });
+
+
