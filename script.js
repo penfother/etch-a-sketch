@@ -1,5 +1,4 @@
- //refactor this
- //creates a table of divs with defined number of rows and columns
+//creates table with rows and columns of divs
 function setTable(numberOfRows, numberOfColumns, tableDOM) {
     let table = [];
     let c=1;
@@ -26,17 +25,19 @@ function setTable(numberOfRows, numberOfColumns, tableDOM) {
 const tableSpread = document.body.appendChild(document.createElement("div"));
 tableSpread.setAttribute("class", "tableSpread");
 
-let a=100;
+//button that asks for user input to create new table
+let a=window.prompt("How big do you want your etch-a-sketch to be?");
 
 setTable(a,a, tableSpread);
 
+//randomly change color with each mouseover
 function changeColor(item) {
     let randomColor=Math.floor(Math.random()*16777215).toString(16);
     return "#" + randomColor;
 };
 
+//enables mouseover to color the background of div
 let squares = document.querySelectorAll(".square");
-
 squares.forEach((square) => {
     square.addEventListener("mouseover", ()=> {
         square.style.backgroundColor = changeColor();
